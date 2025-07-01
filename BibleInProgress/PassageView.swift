@@ -239,8 +239,10 @@ struct PassageView: View {
                             Spacer()
                         }
 
-                        Button("\(Verse(book: book, chapter: chapterStart, verse: verseStart).formatted(mode: verseMode))") {
-                            showChooseChapterModal.toggle()
+                        if passageMode != "Book" {
+                            Button("\(Verse(book: book, chapter: chapterStart, verse: verseStart).formatted(mode: verseMode))") {
+                                showChooseChapterModal.toggle()
+                            }
                         }
 
                         if passageMode == "Range" {
